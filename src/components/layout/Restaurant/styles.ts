@@ -6,6 +6,7 @@ export const Card = styled.div`
   position: relative;
   max-height: 400px;
   ${displayFlexCol}
+  background-color: ${colors.witeMedium};
 
   @media (max-width: 768px) {
     height: auto;

@@ -81,7 +81,7 @@ export const Modal = styled.div`
 export const ModalCard = styled.div`
   z-index: 1;
   background-color: ${colors.pinkDark};
-  color: ${colors.pinkMedium};
+  color: ${colors.witeMedium};
   position: relative;
   max-width: 1024px;
   align-items: center;
@@ -122,6 +122,7 @@ export const ModalContent = styled.div`
   }
 
   ${Button} {
+    background-color: ${colors.pinkMedium};
     width: auto;
     align-self: flex-start;
     margin-bottom: 32px;
