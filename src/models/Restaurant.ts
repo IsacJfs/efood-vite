@@ -15,3 +15,13 @@ export interface Restaurants {
     porcao: string;
   }];
 }
+
+export interface MenuItem {
+  id: number;
+  foto: string;
+  nome: string;
+  descricao: string;
+  porcao: string;
+  preco: number;
+  // Adicione outros campos necessários aqui
+}

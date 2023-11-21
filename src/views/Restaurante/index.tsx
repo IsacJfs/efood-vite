@@ -7,7 +7,7 @@ import HeroMenu from '../../components/layout/HeroMenu'
 
 
 
-const RestaurantProfile = () => {
+const Restaurante = () => {
   const { id } = useParams()
 
   const [cardapio, setCardapio] = useState<Restaurants>()
@@ -31,4 +31,4 @@ const RestaurantProfile = () => {
   )
 }
 
-export default RestaurantProfile
+export default Restaurante
