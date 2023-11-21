@@ -55,7 +55,7 @@ export const buttonTagStyle = css`
   font-size: 14px;
   text-align: center;
   background-color: ${colors.pinkDark};
-  color: ${colors.pinkLight};
+  color: ${colors.pinkMedium};
   padding: 4px 8px;
   cursor: pointer;
   display: inline-block;

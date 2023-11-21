@@ -41,7 +41,7 @@ export const imageMenu = styled.img`
 
 export const Button = styled.button`
   ${buttonTagStyle}
-  background-color: ${colors.pinkLight};
+  background-color: ${colors.pinkMedium};
   color: ${colors.pinkDark};
   width: 100%;
   margin-top: 4px;
@@ -122,7 +122,6 @@ export const ModalContent = styled.div`
   }
 
   ${Button} {
-    background-color: ${colors.pinkMedium};
     width: auto;
     align-self: flex-start;
     margin-bottom: 32px;
