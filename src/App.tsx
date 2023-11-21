@@ -1,10 +1,15 @@
+import { BrowserRouter } from 'react-router-dom'
+import Footer from './components/layout/Footer'
+import GlobalStyle from './assets/styles.ts'
+import Rotas from './routes'
+
 function App() {
   return (
-    <>
-      <div>
-        Olá mundo
-      </div>
-    </>
+    <BrowserRouter>
+      <GlobalStyle />
+      <Rotas />
+      <Footer />
+    </BrowserRouter>
   )
 }
 
