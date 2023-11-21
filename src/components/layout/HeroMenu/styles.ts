@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, displayFlexCol } from '../../../assets/styles'
+import { colors, displayFlexCol, overlay } from '../../../assets/styles'
 
 interface BannerProps {
   $backgroundimage: string
@@ -11,6 +11,12 @@ export const Banner = styled.div<BannerProps>`
   background-size: cover;
   height: 280px;
   margin-bottom: 56px;
+  position: relative;
+
+    .overlay {
+    ${overlay}
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 `
 
 export const BannerContent = styled.div`
@@ -18,12 +24,13 @@ export const BannerContent = styled.div`
   height: 100%;
   padding-top: 24px;
   padding-bottom: 32px;
-`
+  `
 
 export const Categorie = styled.h2`
   font-weight: 100;
   font-size: 32px;
   color: ${colors.witeMedium};
+  z-index: 1;
 `
 
 export const Title = styled(Categorie)`

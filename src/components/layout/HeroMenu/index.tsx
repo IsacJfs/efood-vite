@@ -12,6 +12,7 @@ const HeroMenu = ({restaurants}: Props) => {
         <S.Categorie> {restaurants.tipo}</S.Categorie>
         <S.Title>{restaurants.titulo}</S.Title>
       </S.BannerContent>
+      <div className='overlay'></div>
     </S.Banner>
   )
 }
