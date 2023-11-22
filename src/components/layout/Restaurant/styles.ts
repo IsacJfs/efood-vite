@@ -35,7 +35,7 @@ export const Image = styled.img`
 
 export const Head = styled.div`
   ${displayFlex}
-  font-weight: bold;
+  font-weight: 900;
   font-size: 18px;
 
   img {

@@ -34,5 +34,5 @@ export const Categorie = styled.h2`
 `
 
 export const Title = styled(Categorie)`
-  font-weight: bold;
+  font-weight: 900;
 `

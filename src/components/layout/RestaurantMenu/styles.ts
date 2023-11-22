@@ -50,6 +50,7 @@ export const Button = styled.button`
 export const Name = styled.h4`
   margin: 8px 0;
   font-size: 16px;
+  font-weight: 900;
 `
 
 export const Descricao = styled.p`

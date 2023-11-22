@@ -16,6 +16,7 @@ export const Header = styled(bgHeader)`
 
 export const Title = styled.h1`
   font-size: 36px;
+  font-weight: 900;
   text-align: center;
 `
 

@@ -2,6 +2,7 @@ import styled, { createGlobalStyle, css } from 'styled-components'
 import RobotoRegular from './fonts/Roboto-Regular.ttf'
 import RobotoBold from './fonts/Roboto-Bold.ttf'
 import RobotoThin from './fonts/Roboto-Thin.ttf'
+import RobotoBlack from './fonts/Roboto-Black.ttf'
 
 export const colors = {
   pinkLight: '#FFF8F2',
@@ -28,6 +29,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: Roboto;
     src: url(${RobotoThin}) format('truetype');
     font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: Roboto;
+    src: url(${RobotoBlack}) format('truetype');
+    font-weight: 900;
     font-style: normal;
   }
 

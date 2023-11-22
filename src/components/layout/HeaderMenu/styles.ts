@@ -21,6 +21,7 @@ export const Header = styled.div`
 
 export const HeaderLinks = styled.a`
   color: ${colors.pinkDark};
+  font-weight: 900;
   font-size: 18px;
 `
 export const HeaderCarrinho = styled(HeaderLinks)`
