@@ -37,7 +37,7 @@ const Restaurant = React.memo(
             {destacado}
           </S.TagContainer>
           <div>
-            <S.Button to={`/restaurante/${id}`}>Saiba mais</S.Button>
+            <S.Button to={`/restaurantes/${id}`}>Saiba mais</S.Button>
           </div>
         </div>
       </S.Body>
