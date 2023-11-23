@@ -1,43 +1,5 @@
 import styled from 'styled-components'
-import { Description, buttonTagStyle, colors, displayFlexCol, overlay } from '../../../assets/styles'
-
-
-export const Menu = styled.section`
-  color: ${colors.witeMedium};
-`
-
-export const Card = styled.div`
-  background-color: ${colors.pinkDark};
-  color: ${colors.pinkMedium};
-  padding: 8px;
-  height: 336px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  ${Description} {
-    font-size: 14px;
-  }
-
-  @media (max-width: 768px) {
-    margin-bottom: 32px;
-  }
-`
-
-export const CardContainer = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 32px;
-
-  @media (max-width: 768px) {
-    display: block;
-  }
-`
-
-export const imageMenu = styled.img`
-  width: 100%;
-  height: 167px;
-`
+import { buttonTagStyle, colors, overlay } from '../../../assets/styles'
 
 export const Button = styled.button`
   ${buttonTagStyle}
@@ -51,16 +13,21 @@ export const Name = styled.h4`
   margin: 8px 0;
   font-size: 16px;
   font-weight: 900;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    padding: 8px 0;
+  }
 `
 
 export const Descricao = styled.p`
   line-height: 22px;
   font-size: 14px;
   max-height: 88px;
-`
 
-export const CardHeader = styled.div`
-  ${displayFlexCol}
+  @media (max-width: 768px) {
+    max-height: 100%;
+  }
 `
 
 export const Modal = styled.div`
@@ -76,6 +43,7 @@ export const Modal = styled.div`
 
   .overlay {
     ${overlay}
+    opacity: 0.8;
   }
 `
 
@@ -89,6 +57,7 @@ export const ModalCard = styled.div`
   display: flex;
   padding: 32px;
 
+
   span {
     position: absolute;
     top: 16px;
@@ -98,7 +67,8 @@ export const ModalCard = styled.div`
     img {
       height: 16px;
       width: 16px;
-      margin: 0;
+      margin: 0 auto;
+      object-fit: cover;
     }
   }
 
@@ -109,6 +79,13 @@ export const ModalCard = styled.div`
     margin-right: 24px;
   }
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    img {
+      margin: 0;
+    }
+  }
 `
 
 export const ModalContent = styled.div`

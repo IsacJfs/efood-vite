@@ -15,7 +15,7 @@ export const Banner = styled.div<BannerProps>`
 
     .overlay {
     ${overlay}
-    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
   }
 `
 

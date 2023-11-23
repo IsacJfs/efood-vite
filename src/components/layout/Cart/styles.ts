@@ -11,6 +11,7 @@ export const CartContainer = styled.section`
 
 export const Overlay = styled.div`
   ${overlay}
+  opacity: 0.8;
   position: fixed;
   z-index: 1;
   `
@@ -51,6 +52,7 @@ export const CartItem = styled.div`
     width: 80px;
     height: 80px;
     margin-right: 8px;
+    object-fit: cover;
   }
 
   div {
@@ -85,5 +87,15 @@ export const CartPrice = styled.div`
     color: ${colors.pinkDark};
     background-color: ${colors.pinkMedium};
     width: 100%;
+
+    &.small{
+      display: none;
+      margin-top: 24px;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
   }
 `
+

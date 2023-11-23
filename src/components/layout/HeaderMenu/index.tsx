@@ -3,6 +3,7 @@ import logo from '../../../assets/images/logo.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../../store'
 import { open } from '../../../store/reducers/cart'
+import { Link } from 'react-router-dom'
 
 const HeaderMenu = () => {
   const dispatch = useDispatch()
@@ -15,9 +16,9 @@ const HeaderMenu = () => {
   return (
     <S.BgHeader>
       <S.Header className="container">
-        <S.HeaderLinks href="/">Restaurantes</S.HeaderLinks>
+        <S.HeaderLinks to="/">Restaurantes</S.HeaderLinks>
         <S.Logo>
-          <img src={logo} alt="logo-efood" />
+          <Link to="/"><img src={logo} alt="logo-efood" /></Link>
         </S.Logo>
         <S.HeaderCarrinho onClick={openCart}>
           <span>{items.length}</span>produto(s) no carrinho

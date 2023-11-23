@@ -32,7 +32,7 @@ const Cart = () => {
         <ul>
           {items.map((item) => (
             <S.CartItem key={item.id}>
-            <img src={item.foto} alt="" />
+            <img src={item.foto} alt={item.nome} />
             <div>
               <h3>{item.nome}</h3>
               <p>{formataPreco(item.preco)}</p>
@@ -47,6 +47,7 @@ const Cart = () => {
             <span>{formataPreco(getTotalPrice())}</span>
           </div>
           <button>Continuar com a entrega</button>
+          <button className='small' onClick={closeCart}>Continuar comprando</button>
         </S.CartPrice>
       </S.Cart>
     </S.CartContainer>
