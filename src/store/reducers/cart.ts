@@ -16,9 +16,9 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action: PayloadAction<MenuItem>) => {
-      const Cardapio = state.items.find((item) => item.id === action.payload.id)
+      const existingItem = state.items.find((item) => item.id === action.payload.id)
 
-      if (!Cardapio) {
+      if (!existingItem) {
         state.items.push(action.payload)
       } else {
         alert('O Prato selecionado já está no carrinho')

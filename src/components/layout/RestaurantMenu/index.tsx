@@ -4,8 +4,8 @@ import {
   Restaurants,
   MenuItem as MenuItemType
 } from '../../../models/Restaurant'
-import close from '../../../assets/images/close 1.svg'
 import * as S from './styles'
+import Modal from '../Modal'
 
 type Props = {
   restaurants: Restaurants
@@ -37,33 +37,14 @@ const MenuItem = ({
   </S.Card>
 )
 
-const Modal = ({
+const ModalContent = ({
   item,
   onClose
 }: {
   item: MenuItemType
   onClose: () => void
 }) => (
-  <S.Modal>
-    <S.ModalCard>
-      <span>
-        <img onClick={onClose} src={close} alt="fechar" />
-      </span>
-      <img src={item.foto} alt={item.nome} />
-      <S.ModalContent>
-        <S.Name>{item.nome}</S.Name>
-        <div>
-          <S.Descricao>{item.descricao}</S.Descricao>
-          <br />
-          <S.Descricao>Serve: {item.porcao}</S.Descricao>
-        </div>
-        <S.Button type="button">
-          Adicionar ao carrinho - {formataPreco(item.preco)}
-        </S.Button>
-      </S.ModalContent>
-    </S.ModalCard>
-    <div className="overlay" onClick={onClose}></div>
-  </S.Modal>
+  <Modal item={item} onClose={onClose} />
 )
 
 const RestaurantMenu = ({ restaurants }: Props) => {
@@ -91,7 +72,7 @@ const RestaurantMenu = ({ restaurants }: Props) => {
         </S.CardContainer>
       </S.Menu>
       {isModalOpen && selectedItem && (
-        <Modal item={selectedItem} onClose={closeModal} />
+        <ModalContent item={selectedItem} onClose={closeModal} />
       )}
     </>
   )

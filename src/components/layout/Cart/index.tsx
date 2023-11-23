@@ -31,7 +31,7 @@ const Cart = () => {
       <S.Cart>
         <ul>
           {items.map((item) => (
-            <S.CartItem>
+            <S.CartItem key={item.id}>
             <img src={item.foto} alt="" />
             <div>
               <h3>{item.nome}</h3>

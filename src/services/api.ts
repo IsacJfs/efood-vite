@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { Restaurants } from '../models/Restaurant'
+import { MenuItem, Restaurants } from '../models/Restaurant'
 
 export const restauranteApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://fake-api-tau.vercel.app/api/efood/restaurantes' }),
@@ -7,11 +7,17 @@ export const restauranteApi = createApi({
     getRestaurates: builder.query<Restaurants[], void>({
       query: () => '',
     }),
-    getMenu: builder.query<Restaurants, string>({
+    getHeroRestaurant: builder.query<Restaurants, string>({
+      query: (id) => `/${id}`,
+    }),
+    getMenu: builder.query<MenuItem, string>({
+      query: (id) => `/${id}`,
+    }),
+    getHero: builder.query<Restaurants[], string>({
       query: (id) => `/${id}`,
     }),
   })
 })
 
-export const { useGetRestauratesQuery, useGetMenuQuery } = restauranteApi
+export const { useGetRestauratesQuery, useGetMenuQuery, useGetHeroQuery, useGetHeroRestaurantQuery } = restauranteApi
 export default restauranteApi

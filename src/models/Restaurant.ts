@@ -6,14 +6,7 @@ export interface Restaurants {
   avaliacao: number;
   descricao: string;
   capa: string;
-  cardapio: [{
-    foto: string;
-    preco: number;
-    id: number;
-    nome: string;
-    descricao: string;
-    porcao: string;
-  }];
+  cardapio: MenuItem[];
 }
 
 export interface MenuItem {
@@ -23,5 +16,4 @@ export interface MenuItem {
   descricao: string;
   porcao: string;
   preco: number;
-  // Adicione outros campos necessários aqui
 }
