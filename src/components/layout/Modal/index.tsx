@@ -1,13 +1,10 @@
 import { useDispatch } from 'react-redux'
 import * as S from './styles'
-import { add, open } from '../../../store/reducers/cart'
-import { MenuItem } from '../../../models/Restaurant'
+import { add, open } from '../../../features/checkout/redux/cartSlice'
 import close from '../../../assets/images/close 1.svg'
-import { formataPreco } from '../RestaurantMenu'
+import { formataPreco } from '../../../features/checkout/utils'
 
-
-const Modal = ( { item, onClose }: { item: MenuItem, onClose: () => void }) => {
-
+const Modal = ( { item, onClose }: { item: Menu, onClose: () => void }) => {
   const dispatch = useDispatch()
 
   const addToCart = () => {
@@ -30,7 +27,7 @@ const Modal = ( { item, onClose }: { item: MenuItem, onClose: () => void }) => {
             <br />
             <S.Descricao>Serve: {item.porcao}</S.Descricao>
           </div>
-          <S.Button type="button" onClick={addToCart}>
+          <S.Button title='Adicionar ao carrinho' type="button" onClick={addToCart}>
             Adicionar ao carrinho - {formataPreco(item.preco)}
           </S.Button>
         </S.ModalContent>

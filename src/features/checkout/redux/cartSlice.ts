@@ -1,8 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { MenuItem } from '../../models/Restaurant'
 
 type CartState = {
-  items: MenuItem[]
+  items: Menu[]
   isOpen: boolean
 }
 
@@ -15,7 +14,7 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    add: (state, action: PayloadAction<MenuItem>) => {
+    add: (state, action: PayloadAction<Menu>) => {
       const existingItem = state.items.find((item) => item.id === action.payload.id)
 
       if (!existingItem) {

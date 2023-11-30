@@ -10,6 +10,7 @@ type Props = {
   avaliacao: number;
   descricao: string;
   capa: string;
+  tipo: string;
 }
 
 const Restaurant = React.memo(
@@ -19,31 +20,32 @@ const Restaurant = React.memo(
     id,
     avaliacao,
     descricao,
-    capa
-  }: Props) => (
-    <S.Card>
-      <S.Image src={capa} alt={titulo} />
-      <S.Body>
-        <div>
-          <S.Head>
-            <p>{titulo}</p>
-            <S.Head>
-              <p>{avaliacao}</p>
-              <img src={estrela} alt="Estrela" />
-            </S.Head>
-          </S.Head>
-          <Description><p>{descricao}</p></Description>
-          <S.TagContainer>
-            {destacado}
-          </S.TagContainer>
+    capa,
+    tipo
+  }: Props) => {
+    return (
+      <S.Card>
+        <S.Image src={capa} alt={titulo} />
+        <S.Body>
           <div>
-            <S.Button to={`/restaurantes/${id}`}>Saiba mais</S.Button>
+            <S.Head>
+              <p>{titulo}</p>
+              <S.Head>
+                <p>{avaliacao}</p>
+                <img src={estrela} alt="Estrela" />
+              </S.Head>
+            </S.Head>
+            <Description><p>{descricao}</p></Description>
+            <S.TagContainer>
+              {destacado ? <S.Tag className='destaque'>Destaque da semana</S.Tag> : ''}
+              <S.Tag>{tipo}</S.Tag>
+            </S.TagContainer>
+            <S.Button title='Saiba mais' to={`/restaurantes/${id}`}>Saiba mais</S.Button>
           </div>
-        </div>
-      </S.Body>
-    </S.Card>
-  )
-)
+        </S.Body>
+      </S.Card>
+    )
+  })
 
 Restaurant.displayName = 'Restaurant'
 

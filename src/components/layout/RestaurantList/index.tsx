@@ -1,9 +1,8 @@
-import { Restaurants } from '../../../models/Restaurant'
 import Restaurant from '../Restaurant'
 import * as S from './styles'
 
 type Props = {
-  restaurants: Restaurants[]
+  restaurants: Restaurant[]
 }
 
 const RestaurantList = ({ restaurants }: Props) => {
@@ -19,6 +18,7 @@ const RestaurantList = ({ restaurants }: Props) => {
           avaliacao={restaurante.avaliacao}
           descricao={restaurante.descricao}
           capa={restaurante.capa}
+          tipo={restaurante.tipo}
         />
         </li>
       ))}

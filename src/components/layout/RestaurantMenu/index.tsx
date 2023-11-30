@@ -1,28 +1,17 @@
 import { useState } from 'react'
 import { Description } from '../../../assets/styles'
-import {
-  Restaurants,
-  MenuItem as MenuItemType
-} from '../../../models/Restaurant'
 import * as S from './styles'
 import Modal from '../Modal'
 
 type Props = {
-  restaurants: Restaurants
-}
-
-export const formataPreco = (preco = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
+  restaurants: Restaurant
 }
 
 const MenuItem = ({
   item,
   onClick
 }: {
-  item: MenuItemType
+  item: Menu
   onClick: () => void
 }) => (
   <S.Card>
@@ -31,9 +20,11 @@ const MenuItem = ({
       <S.Name>{item.nome}</S.Name>
     </S.CardHeader>
     <Description>{item.descricao}</Description>
-    <S.Button type='button' onClick={onClick}>
-      Saiba Mais
+    <div>
+    <S.Button type='button' title='Adicionar ao carrinho' onClick={onClick}>
+      Adicionar ao carrinho
     </S.Button>
+    </div>
   </S.Card>
 )
 
@@ -41,7 +32,7 @@ const ModalContent = ({
   item,
   onClose
 }: {
-  item: MenuItemType
+  item: Menu
   onClose: () => void
 }) => (
   <Modal item={item} onClose={onClose} />
@@ -49,9 +40,9 @@ const ModalContent = ({
 
 const RestaurantMenu = ({ restaurants }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedItem, setSelectedItem] = useState<MenuItemType | null>(null)
+  const [selectedItem, setSelectedItem] = useState<Menu | null>(null)
 
-  const openModal = (item: MenuItemType) => {
+  const openModal = (item: Menu) => {
     setSelectedItem(item)
     setIsModalOpen(true)
   }

@@ -1,11 +1,10 @@
 import styled from 'styled-components'
-import { buttonTagStyle, colors, overlay } from '../../../assets/styles'
+import { buttonMediumCSS, colors, overlay } from '../../../assets/styles'
 
 export const Button = styled.button`
-  ${buttonTagStyle}
-  background-color: ${colors.pinkMedium};
-  color: ${colors.pinkDark};
+  ${buttonMediumCSS}
   width: 100%;
+  padding: 4px 7px;
   margin-top: 4px;
 `
 

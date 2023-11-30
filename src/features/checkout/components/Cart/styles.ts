@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { buttonTagStyle, colors, overlay } from "../../../assets/styles";
-import lixeira from '../../../assets/images/lixeira-de-reciclagem 1.svg'
+import { buttonDarkCSS, buttonMediumCSS, colors, overlay } from "../../../../assets/styles";
+import lixeira from '../../../../assets/images/lixeira-de-reciclagem 1.svg'
 
 export const CartContainer = styled.section`
   display: none;
@@ -74,7 +74,7 @@ export const CartItem = styled.div`
 
 export const CartPrice = styled.div`
   div {
-    ${buttonTagStyle}
+    ${buttonDarkCSS}
     display: flex;
     justify-content: space-between;
     padding: 0;
@@ -83,9 +83,7 @@ export const CartPrice = styled.div`
   }
 
   button {
-    ${buttonTagStyle}
-    color: ${colors.pinkDark};
-    background-color: ${colors.pinkMedium};
+    ${buttonMediumCSS}
     width: 100%;
 
     &.small{

@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { colors, displayFlex, displayFlexCol, buttonTagStyle, Description } from '../../../assets/styles'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import { colors, displayFlex, displayFlexCol, Description, tagCSS, buttonDarkCSS } from '../../../assets/styles'
 
 export const Card = styled.div`
   position: relative;
@@ -16,7 +16,9 @@ export const Card = styled.div`
 
 export const Body = styled.div`
   ${displayFlexCol}
-  border: 1px solid ${colors.pinkDark};
+  border-bottom: 1px solid ${colors.pinkDark};
+  border-right: 1px solid ${colors.pinkDark};
+  border-left: 1px solid ${colors.pinkDark};
   margin-bottom: 48px;
   padding: 8px;
   color: ${colors.pinkDark};
@@ -35,7 +37,7 @@ export const Image = styled.img`
 
 export const Head = styled.div`
   ${displayFlex}
-  font-weight: 900;
+  font-weight: bold;
   font-size: 18px;
 
   img {
@@ -46,15 +48,26 @@ export const TagContainer = styled.div`
   position: absolute;
   right: 16px;
   top: 16px;
+  text-transform: capitalize;
+  display: flex;
 `
 
 export const Tag = styled.p`
-  ${buttonTagStyle}
+  ${tagCSS}
   margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.destaque{
+    text-transform: none;
+    width: 126px;
+  }
 `
 
 export const Button = styled(Link)`
-  ${buttonTagStyle}
+  ${buttonDarkCSS}
+  width: 82px;
 
   @media (max-width: 768px) {
     width: 100%;

@@ -2,7 +2,7 @@ import * as S from './styles'
 import logo from '../../../assets/images/logo.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../../store'
-import { open } from '../../../store/reducers/cart'
+import { open } from '../../../features/checkout/redux/cartSlice'
 import { Link } from 'react-router-dom'
 
 const HeaderMenu = () => {
@@ -10,7 +10,11 @@ const HeaderMenu = () => {
   const { items } = useSelector((state: RootReducer) => state.cart)
 
   const openCart = () => {
-    dispatch(open())
+    if (items.length > 0) {
+      dispatch(open())
+    }else{
+      alert("O carrinho está vazio")
+    }
   }
 
   return (

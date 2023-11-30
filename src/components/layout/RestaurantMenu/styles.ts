@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Description, buttonTagStyle, colors, displayFlexCol, overlay } from '../../../assets/styles'
+import { Description, buttonMediumCSS, colors, displayFlexCol } from '../../../assets/styles'
 
 
 export const Menu = styled.section`
@@ -40,9 +40,7 @@ export const imageMenu = styled.img`
 `
 
 export const Button = styled.button`
-  ${buttonTagStyle}
-  background-color: ${colors.pinkMedium};
-  color: ${colors.pinkDark};
+  ${buttonMediumCSS}
   width: 100%;
   margin-top: 4px;
 `
