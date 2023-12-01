@@ -13,7 +13,7 @@ const CheckoutContainer = () => {
   // Functions to change the current step
   const goToAddressForm = () => setCurrentStep('address')
   const goToPaymentForm = () => setCurrentStep('payment')
-  const goToCart = () => setCurrentStep('cart')
+  const goToCart = () => [setCurrentStep('cart'), setShowSuccessMessage(true)]
   const goToSuccess = () => setCurrentStep('success')
 
   // Function to close the success message
