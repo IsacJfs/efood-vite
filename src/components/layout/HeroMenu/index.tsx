@@ -1,8 +1,7 @@
-import { Restaurants } from '../../../models/Restaurant'
 import * as S from './styles'
 
 type Props = {
-  restaurants: Restaurants
+  restaurants: Restaurant
 }
 
 const HeroMenu = ({ restaurants }: Props) => {
