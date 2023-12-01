@@ -1,22 +1,25 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-type responseState = {
-  orderId: string;
-};
+type ResponseState = {
+  orderId: string
+}
 
-const initialState: responseState = {
+const initialState: ResponseState = {
   orderId: ''
-};
+}
 
 const responseSlice = createSlice({
   name: 'response',
   initialState,
   reducers: {
     setResponseData: (state, action: PayloadAction<string>) => {
-      state.orderId = action.payload
+      state.orderId = action.payload // set the orderId
     },
-  },
-});
+    clearResponseData: (state) => {
+      state.orderId = '' // clear the orderId
+    }
+  }
+})
 
-export const { setResponseData } = responseSlice.actions;
-export default responseSlice.reducer;
+export const { setResponseData, clearResponseData } = responseSlice.actions
+export default responseSlice.reducer

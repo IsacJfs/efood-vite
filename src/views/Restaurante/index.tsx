@@ -2,9 +2,11 @@ import { useParams } from 'react-router-dom'
 import HeaderMenu from '../../components/layout/HeaderMenu'
 import RestaurantMenu from '../../components/layout/RestaurantMenu'
 import HeroMenu from '../../components/layout/HeroMenu'
-import { useGetHeroQuery, useGetHeroRestaurantQuery, useGetMenuQuery } from '../../services/api'
-
-
+import {
+  useGetHeroQuery,
+  useGetHeroRestaurantQuery,
+  useGetMenuQuery
+} from '../../services/api'
 
 const Restaurante = () => {
   const { id } = useParams()

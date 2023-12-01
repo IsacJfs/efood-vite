@@ -1,78 +1,83 @@
-
-import { useDispatch, useSelector } from 'react-redux';
-import { RootReducer } from '../../../store';
-import { setResponseData } from '../redux/responseSlice';
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../../store'
+import { setResponseData } from '../redux/responseSlice'
+import * as S from './styles'
 
 const CheckoutButton = () => {
-  // Acessa os estados do carrinho, entrega e pagamento do Redux.
-  const cart = useSelector((state: RootReducer) => state.cart);
-  const delivery = useSelector((state: RootReducer) => state.delivery);
-  const payment = useSelector((state: RootReducer) => state.payment);
+  // Accessing the state of the cart, delivery and payment
+  const cart = useSelector((state: RootReducer) => state.cart)
+  const delivery = useSelector((state: RootReducer) => state.delivery)
+  const payment = useSelector((state: RootReducer) => state.payment)
   const dispatch = useDispatch()
 
   const handleCheckout = async () => {
     const checkoutData = {
-      // Prepara os dados para o checkout formatando-os de acordo com o schema da API.
-      products: cart.items.map(item => ({
-      // Mapeia os itens do carrinho para criar um array com os IDs e preços dos produtos.
-        id: item.id,        // ID do produto
-        price: item.preco   // Preço do produto
+      // Estructure the checkout data
+      products: cart.items.map((item) => ({
+        // Map the products to get only the id and price
+        id: item.id, // Product ID
+        price: item.preco // Product price
       })),
-      // Estrutura as informações de entrega, obtidas no AddressForm
+      // Estructure the delivery data
       delivery: {
-        receiver: delivery.receiver,     // Nome do destinatário
+        receiver: delivery.receiver, // Delivery receiver
         address: {
-          description: delivery.description,  // Contém as informações de Logradouro, bairro, lote
-          city: delivery.city,                // Nome da cidade
-          zipCode: delivery.zipCode,          // CEP
-          number: delivery.number,            // Número do Lote/Casa
-          complement: delivery.complement     // Algum complemento, não é obrigatório
+          description: delivery.description, // Address description
+          city: delivery.city, // City name
+          zipCode: delivery.zipCode, // Postal code
+          number: delivery.number, // Number of the address
+          complement: delivery.complement // Address complement
         }
       },
       payment: {
-        // Estrutura as informações de pagamento, obtidas no PaymentForm
+        // Estructure the payment data
         card: {
-          name: payment.name,     // Nome contido no cartão
-          number: payment.number, // Número do cartão
-          code: payment.code,     // Código do cartão
+          name: payment.name, // Name on the card
+          number: payment.number, // Card number
+          code: payment.code, // Card code
           expires: {
-            month: payment.month, // Mês de vencimento do cartão
-            year: payment.year    // Ano de vencimento do cartão
+            month: payment.month, // Month of expiration of the card
+            year: payment.year // Year of expiration of the card
           }
         }
       }
-    };
+    }
 
     try {
-      // Realiza a requisição POST para a API de checkout com os dados formatados.
-      const response = await fetch('https://fake-api-tau.vercel.app/api/efood/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json', // Define o tipo de conteúdo como JSON
-        },
-        body: JSON.stringify(checkoutData),   // Converte os dados do checkout para JSON
-      });
+      // Send the checkout data to the API
+      const response = await fetch(
+        'https://fake-api-tau.vercel.app/api/efood/checkout',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json' // Define the content type of the request to JSON
+          },
+          body: JSON.stringify(checkoutData) // Convert the checkout data to JSON
+        }
+      )
 
-      // Verifica se a resposta da API foi bem-sucedida.
+      // Check if the response is ok
       if (!response.ok) {
-        throw new Error('Erro no envio do checkout');
+        throw new Error('Erro no envio do checkout')
       }
 
-      // Processa a resposta da API.
-      const responseData = await response.json();
-      console.log('Checkout bem-sucedido:', responseData);
-      dispatch(setResponseData(responseData))
+      // Parse the response to JSON
+      const responseData = await response.json()
+      console.log('Checkout bem-sucedido:', responseData)
+      const orderId = responseData.orderId
+      dispatch(setResponseData(orderId))
     } catch (error) {
-      // Captura e registra erros ocorridos durante a requisição ou processamento da resposta.
-      console.error('Erro no checkout:', error);
+      // If the response is not ok, log the error
+      console.error('Erro no checkout:', error)
     }
-  };
+  }
 
-
-  // Renderiza um botão que, quando clicado, dispara o processo de checkout.
+  // Rendering the component
   return (
-    <button type='submit' onClick={handleCheckout}>Finalizar Pedido</button>
-  );
-};
+    <S.ButtonForm type="submit" onClick={handleCheckout}>
+      Finalizar Pedido
+    </S.ButtonForm>
+  )
+}
 
-export default CheckoutButton;
+export default CheckoutButton

@@ -1,6 +1,10 @@
 import styled from 'styled-components'
-import { Description, buttonMediumCSS, colors, displayFlexCol } from '../../../assets/styles'
-
+import {
+  Description,
+  buttonMediumCSS,
+  colors,
+  displayFlexCol
+} from '../../../assets/styles'
 
 export const Menu = styled.section`
   color: ${colors.witeMedium};

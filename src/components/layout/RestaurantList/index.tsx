@@ -6,20 +6,19 @@ type Props = {
 }
 
 const RestaurantList = ({ restaurants }: Props) => {
-
   return (
     <S.Container className="container">
       {restaurants.map((restaurante) => (
         <li key={restaurante.id}>
           <Restaurant
-          id={restaurante.id}
-          titulo={restaurante.titulo}
-          destacado={restaurante.destacado}
-          avaliacao={restaurante.avaliacao}
-          descricao={restaurante.descricao}
-          capa={restaurante.capa}
-          tipo={restaurante.tipo}
-        />
+            id={restaurante.id}
+            titulo={restaurante.titulo}
+            destacado={restaurante.destacado}
+            avaliacao={restaurante.avaliacao}
+            descricao={restaurante.descricao}
+            capa={restaurante.capa}
+            tipo={restaurante.tipo}
+          />
         </li>
       ))}
     </S.Container>

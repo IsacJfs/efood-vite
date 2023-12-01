@@ -1,4 +1,3 @@
-
 import Header from '../../components/layout/Header'
 import RestaurantList from '../../components/layout/RestaurantList'
 import { useGetRestauratesQuery } from '../../services/api'
@@ -9,13 +8,13 @@ const Home = () => {
   if (restaurantes) {
     return (
       <div>
-      <Header />
-      <RestaurantList restaurants={restaurantes} />
-    </div>
+        <Header />
+        <RestaurantList restaurants={restaurantes} />
+      </div>
     )
   }
 
-  return <h4>Carregando</h4>
+  return <h4>Carregando...</h4>
 }
 
 export default Home

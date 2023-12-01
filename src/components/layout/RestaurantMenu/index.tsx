@@ -7,13 +7,7 @@ type Props = {
   restaurants: Restaurant
 }
 
-const MenuItem = ({
-  item,
-  onClick
-}: {
-  item: Menu
-  onClick: () => void
-}) => (
+const MenuItem = ({ item, onClick }: { item: Menu; onClick: () => void }) => (
   <S.Card>
     <S.CardHeader>
       <S.imageMenu src={item.foto} alt={item.nome} />
@@ -21,9 +15,9 @@ const MenuItem = ({
     </S.CardHeader>
     <Description>{item.descricao}</Description>
     <div>
-    <S.Button type='button' title='Adicionar ao carrinho' onClick={onClick}>
-      Adicionar ao carrinho
-    </S.Button>
+      <S.Button type="button" title="Adicionar ao carrinho" onClick={onClick}>
+        Adicionar ao carrinho
+      </S.Button>
     </div>
   </S.Card>
 )
@@ -34,9 +28,7 @@ const ModalContent = ({
 }: {
   item: Menu
   onClose: () => void
-}) => (
-  <Modal item={item} onClose={onClose} />
-)
+}) => <Modal item={item} onClose={onClose} />
 
 const RestaurantMenu = ({ restaurants }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false)

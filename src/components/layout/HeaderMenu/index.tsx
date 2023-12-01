@@ -12,17 +12,16 @@ const HeaderMenu = () => {
   const openCart = () => {
     if (items.length > 0) {
       dispatch(open())
-    }else{
-      alert("O carrinho está vazio")
     }
   }
-
   return (
     <S.BgHeader>
       <S.Header className="container">
         <S.HeaderLinks to="/">Restaurantes</S.HeaderLinks>
         <S.Logo>
-          <Link to="/"><img src={logo} alt="logo-efood" /></Link>
+          <Link to="/">
+            <img src={logo} alt="logo-efood" />
+          </Link>
         </S.Logo>
         <S.HeaderCarrinho onClick={openCart}>
           <span>{items.length}</span>produto(s) no carrinho

@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { colors, displayFlex, displayFlexCol, Description, tagCSS, buttonDarkCSS } from '../../../assets/styles'
+import {
+  colors,
+  displayFlex,
+  displayFlexCol,
+  Description,
+  tagCSS,
+  buttonDarkCSS
+} from '../../../assets/styles'
 
 export const Card = styled.div`
   position: relative;
@@ -59,7 +66,7 @@ export const Tag = styled.p`
   align-items: center;
   justify-content: center;
 
-  &.destaque{
+  &.destaque {
     text-transform: none;
     width: 126px;
   }

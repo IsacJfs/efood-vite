@@ -15,12 +15,11 @@ export const BgHeader = styled(bgHeader)`
   }
 `
 
-
 export const HeaderLinks = styled(Link)`
   color: ${colors.pinkDark};
   font-weight: 900;
   font-size: 18px;
-  `
+`
 export const HeaderCarrinho = styled.a`
   color: ${colors.pinkDark};
   font-weight: 900;
@@ -32,12 +31,12 @@ export const HeaderCarrinho = styled.a`
   span {
     margin-right: 4px;
   }
-  `
+`
 
 export const Logo = styled.div`
   width: 128px;
   justify-self: center;
-  `
+`
 
 export const Header = styled.div`
   display: grid;

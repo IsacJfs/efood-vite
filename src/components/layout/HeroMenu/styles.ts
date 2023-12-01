@@ -13,7 +13,7 @@ export const Banner = styled.div<BannerProps>`
   margin-bottom: 56px;
   position: relative;
 
-    .overlay {
+  .overlay {
     ${overlay}
     opacity: 0.5;
   }
@@ -24,7 +24,7 @@ export const BannerContent = styled.div`
   height: 100%;
   padding-top: 24px;
   padding-bottom: 32px;
-  `
+`
 
 export const Categorie = styled.h2`
   font-weight: 100;

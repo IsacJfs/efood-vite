@@ -5,14 +5,14 @@ type Props = {
   restaurants: Restaurants
 }
 
-const HeroMenu = ({restaurants}: Props) => {
+const HeroMenu = ({ restaurants }: Props) => {
   return (
     <S.Banner $backgroundimage={restaurants.capa}>
       <S.BannerContent className="container">
         <S.Categorie> {restaurants.tipo}</S.Categorie>
         <S.Title>{restaurants.titulo}</S.Title>
       </S.BannerContent>
-      <div className='overlay'></div>
+      <div className="overlay"></div>
     </S.Banner>
   )
 }

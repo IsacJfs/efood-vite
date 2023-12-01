@@ -56,7 +56,6 @@ export const ModalCard = styled.div`
   display: flex;
   padding: 32px;
 
-
   span {
     position: absolute;
     top: 16px;
