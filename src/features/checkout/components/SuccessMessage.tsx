@@ -4,6 +4,8 @@ import { RootReducer } from '../../../store'
 import { clearResponseData } from '../redux/responseSlice'
 import { clear } from '../redux/cartSlice'
 import * as S from './styles'
+import { clearDelivery } from '../redux/deliverySlice'
+import { clearPayment } from '../redux/paymentSlice'
 
 // Interface for the props of the SuccessMessage component
 interface SuccessProps {
@@ -30,6 +32,8 @@ const SuccessMensage = ({ onClose, restartToCart }: SuccessProps) => {
     dispatch(clear())
     onClose()
     restartToCart()
+    clearDelivery()
+    clearPayment()
   }
 
   return (

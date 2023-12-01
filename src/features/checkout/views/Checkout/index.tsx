@@ -3,6 +3,7 @@ import Cart from '../../components/Cart'
 import AddressForm from '../../components/AddressForm'
 import PaymentForm from '../../components/PaymentForm'
 import SuccessMensage from '../../components/SuccessMessage'
+import ErrorMessage from '../../components/ErrorMessage'
 
 // CheckoutContainer component
 const CheckoutContainer = () => {
@@ -32,6 +33,12 @@ const CheckoutContainer = () => {
       )}
       {currentStep === 'success' && showSuccessMessage && (
         <SuccessMensage
+          onClose={handleCloseSuccessMessage}
+          restartToCart={goToCart}
+        />
+      )}
+      {currentStep === 'success' && !showSuccessMessage && (
+        <ErrorMessage
           onClose={handleCloseSuccessMessage}
           restartToCart={goToCart}
         />

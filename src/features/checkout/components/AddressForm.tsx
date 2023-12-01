@@ -109,7 +109,7 @@ const AddressForm = ({ onContinue, onBack }: AddressProps) => {
                 />
               </S.FormContainer>
               <S.RowField>
-                <S.FormContainer maxWidth="155px">
+                <S.FormContainer $maxWidth="155px">
                   <label htmlFor="postalCode">CEP</label>
                   <InputMask
                     id="postalCode"
@@ -122,7 +122,7 @@ const AddressForm = ({ onContinue, onBack }: AddressProps) => {
                     mask="99999-999"
                   />
                 </S.FormContainer>
-                <S.FormContainer maxWidth="155px">
+                <S.FormContainer $maxWidth="155px">
                   <label htmlFor="streetNumber">Número</label>
                   <input
                     id="streetNumber"

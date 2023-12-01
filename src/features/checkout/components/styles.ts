@@ -130,11 +130,11 @@ export const EmptCart = styled.p`
 `
 // Estilos compartilhados pelos PaymentForm.tsx e AddressForm.tsx
 type DefMaxWidth = {
-  maxWidth?: string
+  $maxWidth?: string
 }
 
 export const FormContainer = styled.div<DefMaxWidth>`
-  max-width: ${(props) => props.maxWidth || 'auto'};
+  max-width: ${(props) => props.$maxWidth || 'auto'};
   flex: auto;
 
   label {

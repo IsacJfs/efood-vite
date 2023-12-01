@@ -41,6 +41,9 @@ const deliverySlice = createSlice({
     },
     setComplement: (state, action: PayloadAction<string>) => {
       state.complement = action.payload // set the complement
+    },
+    clearDelivery: () => {
+      return { ...initialState } // clear the delivery state
     }
   }
 })
@@ -51,6 +54,7 @@ export const {
   setCity,
   setZipCode,
   setNumber,
-  setComplement
+  setComplement,
+  clearDelivery
 } = deliverySlice.actions
 export default deliverySlice.reducer

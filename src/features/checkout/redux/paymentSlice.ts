@@ -34,10 +34,13 @@ const paymentSlice = createSlice({
     },
     setYear: (state, action: PayloadAction<number>) => {
       state.year = action.payload // set the number
+    },
+    clearPayment: () => {
+      return { ...initialState } // clear the delivery state
     }
   }
 })
 
-export const { setCode, setMonth, setName, setNumber, setYear } =
+export const { setCode, setMonth, setName, setNumber, setYear, clearPayment } =
   paymentSlice.actions
 export default paymentSlice.reducer

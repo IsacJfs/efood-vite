@@ -76,7 +76,7 @@ const PaymentForm = ({ onBack, onSuccess }: PaymentProps) => {
           </h3>
           <form onSubmit={form.handleSubmit}>
             <div>
-              <S.FormContainer maxWidth="344px">
+              <S.FormContainer $maxWidth="344px">
                 <label htmlFor="fullName">Nome no cartão</label>
                 <input
                   id="fullName"
@@ -89,7 +89,7 @@ const PaymentForm = ({ onBack, onSuccess }: PaymentProps) => {
                 />
               </S.FormContainer>
               <S.RowField>
-                <S.FormContainer maxWidth="228px">
+                <S.FormContainer $maxWidth="228px">
                   <label htmlFor="cardNumber">Número do cartão</label>
                   <InputMask
                     id="cardNumber"
@@ -102,7 +102,7 @@ const PaymentForm = ({ onBack, onSuccess }: PaymentProps) => {
                     className={checkInputHasError('cardNumber') ? 'error' : ''}
                   />
                 </S.FormContainer>
-                <S.FormContainer maxWidth="87px">
+                <S.FormContainer $maxWidth="87px">
                   <label htmlFor="cardCode">CVV</label>
                   <InputMask
                     id="cardCode"
@@ -117,7 +117,7 @@ const PaymentForm = ({ onBack, onSuccess }: PaymentProps) => {
                 </S.FormContainer>
               </S.RowField>
               <S.RowField>
-                <S.FormContainer maxWidth="155px">
+                <S.FormContainer $maxWidth="155px">
                   <label htmlFor="expireMonth">Mês de vencimento</label>
                   <InputMask
                     id="expireMonth"
@@ -130,7 +130,7 @@ const PaymentForm = ({ onBack, onSuccess }: PaymentProps) => {
                     className={checkInputHasError('expireMonth') ? 'error' : ''}
                   />
                 </S.FormContainer>
-                <S.FormContainer maxWidth="155px">
+                <S.FormContainer $maxWidth="155px">
                   <label htmlFor="expireYear">Ano de vencimento</label>
                   <InputMask
                     id="expireYear"
